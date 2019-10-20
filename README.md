@@ -4,7 +4,7 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 
 1. [Cheat Sheet](#cheat_sheet)
 2. [Dynamic Programming](#dynamic_programming)
- 2.1 [Value Iteration](#dynamic_programming)
+   2.1 [Value Iteration](#value_iteration)
 
 ## <a name="cheat_sheet"></a>Cheat Sheet
 ![Reinforcement Learning Cheat Sheet](media/reinforcement_learning-overview.png "Reinforcement Learning Cheat Sheet")
