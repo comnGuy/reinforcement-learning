@@ -2,6 +2,8 @@
 
 Note: This repository is still in progress to teach me Dynamic Programming and share my results.
 
+**Contents**
+
 1. [Cheat Sheet](#cheat_sheet)
 2. [Dynamic Programming](#dynamic_programming)
 
