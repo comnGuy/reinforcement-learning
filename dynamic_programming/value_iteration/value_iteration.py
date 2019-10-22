@@ -2,6 +2,7 @@
 
 import numpy as np
 from grid_world import standard_grid, Grid
+from utils import *
 
 # Our threshold for terminate
 THETA = 1e-3
@@ -40,7 +41,6 @@ def find_best_action_value_pair(grid: Grid, V: dict, current_state: tuple) -> fl
         # Initiate the expected value and reward
         expected_reward = 0
         expected_value = 0
-
         for (probability, reward, state_prime) in transititions:
             # Step 5
             # Sum of all possible rewards * probabilities
@@ -58,32 +58,60 @@ def find_best_action_value_pair(grid: Grid, V: dict, current_state: tuple) -> fl
             best_value = current_action_value
             best_action = action
 
-        return best_value
+        return best_action, best_value
 
 # TODO (Bernhard): I think there is a bug, cause the calculations are not correct
+# TODO (Bernhard): Still wrong results...
 def value_iteration(grid: Grid):
     V = init_values()
     
-    max_change = 1
     # Iterate while our threshold is lower then the max change
-    while not max_change < THETA:
+    while True:
+        max_change = 0
         # Loop over all possible states that aren't terminals
         for state in grid.non_terminal_states():
             # Get the old value
             old_value = V[state]
 
             # Find the new value
-            new_value = find_best_action_value_pair(grid, V, state)
+            _, new_value = find_best_action_value_pair(grid, V, state)
 
             # Assign the new value to our table
             V[state] = new_value
 
             # Calculates the new max_change of our value
-            max_change = np.abs(old_value - new_value)
+            max_change = max(max_change, np.abs(old_value - new_value))
+        if max_change < THETA:
+            break
+    return V
 
+def initialize_random_policy():
+  # policy is a lookup table for state -> action
+  # we'll randomly choose an action and update as we learn
+  policy = {}
+  for s in grid.non_terminal_states():
+    policy[s] = np.random.choice(ALL_POSSIBLE_ACTIONS)
+  return policy
 
+def calculate_greedy_policy(grid, V):
+    policy = initialize_random_policy()
+    # find a policy that leads to optimal value function
+    for state in policy.keys():
+        grid.set_state(state)
+        # loop through all possible actions to find the best current action
+        best_action, _ = find_best_action_value_pair(grid, V, state)
+        policy[state] = best_action
+    return policy
 
 if __name__ == '__main__':
-  # Init game
-  grid = standard_grid(obey_prob=1.0, step_cost=None)
-  value_iteration(grid)
+    # Init game
+    grid = standard_grid(obey_prob=1.0, step_cost=None)
+    V = value_iteration(grid)
+
+    # calculate the optimum policy based on our values
+    policy = calculate_greedy_policy(grid, V)
+
+    print("values:")
+    print_values(V, grid)
+    print("policy:")
+    print_policy(policy, grid)
