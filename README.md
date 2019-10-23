@@ -18,14 +18,14 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 ### <a name="value_iteration"></a>Value Iteration
 
 1. Init table V of value estimates with zero
-   2. Loop over all possible states
-      3. State s loop over all possible actions
-         4. Get `a` list of all `s'` transition tuples from `s` and `a`
-         5. expected_reward = sum of all possible rewards multiplied by their probabilities
-         6. expected_value = lookup `V[s']` for each possible `s'`, mulitply by probabilitiy, sum
-         7. actionValue = expectedReward + GAMMA + expectedValue
-      4. Set `V[s]` to the best action_value found
-   3. Repeat 2-8 until largest change is below threshold
+   1. Loop over all possible states
+      1. State s loop over all possible actions
+         1. Get `a` list of all `s'` transition tuples from `s` and `a`
+         2. expected_reward = sum of all possible rewards multiplied by their probabilities
+         3. expected_value = lookup `V[s']` for each possible `s'`, mulitply by probabilitiy, sum
+         4. actionValue = expectedReward + GAMMA + expectedValue
+      2. Set `V[s]` to the best action_value found
+   2. Repeat 1.1 until largest change is below threshold
 
 Value Iteration:
 [Example Code](https://github.com/comnGuy/reinforcement-learning/tree/master/dynamic_programming/value_iteration)
