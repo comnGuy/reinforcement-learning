@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
 
 
 import numpy as np
@@ -25,7 +27,18 @@ def init_values() -> dict:
         V[state] = 0
     return V
 
-def find_best_action_value_pair(grid: Grid, V: dict, current_state: tuple) -> float:
+def find_best_action_value_pair(grid: Grid, V: dict, current_state: tuple) -> (str, float):
+    """ Tries to find the best action value pair
+
+    Args
+        grid: The current instance of the Grid World (game) | Grid
+        V: Dict of values for each state | dict
+        current_state: Current state, which we want to get the transitions | tuple
+
+    Returns
+        action: The best action of this state | str
+        float: The best value of this state | float
+    """
     # Initiate the best action and value
     best_action = None
     best_value = float('-inf')
@@ -60,7 +73,15 @@ def find_best_action_value_pair(grid: Grid, V: dict, current_state: tuple) -> fl
     return best_action, best_value
 
 
-def value_iteration(grid: Grid):
+def value_iteration(grid: Grid) -> dict:
+    """ Performs the value iteration algorithm
+
+    Args
+        grid: The current instance of the Grid World (game) | Grid
+
+    Return
+        V: Values of every state | dict
+    """
     V = init_values()
     
     # Iterate while our threshold is lower then the max change
@@ -83,15 +104,29 @@ def value_iteration(grid: Grid):
             break
     return V
 
-def initialize_random_policy():
-  # policy is a lookup table for state -> action
-  # we'll randomly choose an action and update as we learn
-  policy = {}
-  for s in grid.non_terminal_states():
-    policy[s] = np.random.choice(ALL_POSSIBLE_ACTIONS)
-  return policy
+def initialize_random_policy() -> dict:
+    """ Inits a random policy with our possivle states
 
-def calculate_greedy_policy(grid, V):
+    Return
+        policy: A random policy | dict
+    """
+    # policy is a lookup table for state -> action
+    # we'll randomly choose an action and update as we learn
+    policy = {}
+    for s in grid.non_terminal_states():
+        policy[s] = np.random.choice(ALL_POSSIBLE_ACTIONS)
+    return policy
+
+def calculate_greedy_policy(grid, V) -> dict:
+    """ Calculates the greedy policy of V
+
+    Args
+        grid: The current instance of the Grid World (game) | Grid
+        V: Values of every state | dict
+    
+    Return
+        policy: The policy is calculated by V | dict
+    """
     policy = initialize_random_policy()
     # find a policy that leads to optimal value function
     for state in policy.keys():
@@ -102,11 +137,11 @@ def calculate_greedy_policy(grid, V):
     return policy
 
 if __name__ == '__main__':
-    # Init game
+    # Inits game
     grid = standard_grid(obey_prob=1.0, step_cost=None)
     V = value_iteration(grid)
 
-    # calculate the optimum policy based on our values
+    # Calculates the optimum policy based on our values
     policy = calculate_greedy_policy(grid, V)
 
     print("values:")
