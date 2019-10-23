@@ -23,9 +23,9 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
          1. Get `a` list of all `s'` transition tuples from `s` and `a`
          2. expected_reward = sum of all possible rewards multiplied by their probabilities
          3. expected_value = lookup `V[s']` for each possible `s'`, mulitply by probabilitiy, sum
-         4. actionValue = expectedReward + GAMMA + expectedValue
+         4. `actionValue = expectedReward + GAMMA + expectedValue`
       2. Set `V[s]` to the best action_value found
-   2. Repeat 1.1 until largest change is below threshold
+   2. Repeat _i_ until largest change is below threshold
 
 Value Iteration:
 [Example Code](https://github.com/comnGuy/reinforcement-learning/tree/master/dynamic_programming/value_iteration)
