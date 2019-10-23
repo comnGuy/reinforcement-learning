@@ -57,11 +57,9 @@ def find_best_action_value_pair(grid: Grid, V: dict, current_state: tuple) -> fl
         if current_action_value > best_value:
             best_value = current_action_value
             best_action = action
+    return best_action, best_value
 
-        return best_action, best_value
 
-# TODO (Bernhard): I think there is a bug, cause the calculations are not correct
-# TODO (Bernhard): Still wrong results...
 def value_iteration(grid: Grid):
     V = init_values()
     
