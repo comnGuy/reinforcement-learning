@@ -17,6 +17,11 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 
 ### <a name="value_iteration"></a>Value Iteration
 
+**Formula**
+TODO
+
+**Algorithm**
+
 1. Init table V of value estimates with zero
    1. Loop over all possible states
       1. State s loop over all possible actions
