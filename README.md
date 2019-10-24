@@ -8,6 +8,7 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 2. [Dynamic Programming](#dynamic_programming)
 
    2.1 [Value Iteration](#value_iteration)
+   2.2 [Policy Iteration](#policy_iteration)
 
 ## <a name="cheat_sheet"></a>Cheat Sheet
 
@@ -35,3 +36,9 @@ $$V_{i+1}(s) := \max_a \left\{ \sum_{s'} P_a(s,s') \left( R_a(s,s') + \gamma V_i
 
 Value Iteration:
 [Example Code](https://github.com/comnGuy/reinforcement-learning/tree/master/dynamic_programming/value_iteration)
+
+### <a name="policy_iteration"></a>Policy Iteration
+
+**Formula**
+
+**Algorithm**
