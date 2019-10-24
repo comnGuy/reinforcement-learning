@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 
-
 import numpy as np
 from grid_world import standard_grid, Grid
 from utils import *
@@ -139,6 +138,8 @@ def calculate_greedy_policy(grid, V) -> dict:
 if __name__ == '__main__':
     # Inits game
     grid = standard_grid(obey_prob=1.0, step_cost=None)
+
+    # Calculates the values for each state
     V = value_iteration(grid)
 
     # Calculates the optimum policy based on our values
