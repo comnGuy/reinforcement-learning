@@ -8,6 +8,7 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 2. [Dynamic Programming](#dynamic_programming)
 
    2.1 [Value Iteration](#value_iteration)
+
    2.2 [Policy Iteration](#policy_iteration)
 
 ## <a name="cheat_sheet"></a>Cheat Sheet
