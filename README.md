@@ -21,7 +21,9 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 
 **Formula**
 
-$$V_{i+1}(s) := \max_a \left\{ \sum_{s'} P_a(s,s') \left( R_a(s,s') + \gamma V_i(s') \right) \right\}$$
+\begin{equation}
+V*{i+1}(s) := \max_a \left\{ \sum*{s'} P_a(s,s') \left( R_a(s,s') + \gamma V_i(s') \right) \right\}
+\end{equation}
 
 **Algorithm**
 
