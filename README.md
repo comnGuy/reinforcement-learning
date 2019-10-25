@@ -24,6 +24,7 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 \begin{equation}
 V*{i+1}(s) := \max_a \left\{ \sum*{s'} P_a(s,s') \left( R_a(s,s') + \gamma V_i(s') \right) \right\}
 \end{equation}
+<img src="https://latex.codecogs.com/gif.latex?V*{i&plus;1}(s)&space;:=&space;\max_a&space;\left\{&space;\sum*{s'}&space;P_a(s,s')&space;\left(&space;R_a(s,s')&space;&plus;&space;\gamma&space;V_i(s')&space;\right)&space;\right\}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
 
 **Algorithm**
 
