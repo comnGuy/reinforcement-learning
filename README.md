@@ -11,6 +11,8 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 
    2.2 [Policy Iteration](#policy_iteration)
 
+3. References
+
 ## <a name="cheat_sheet"></a>Cheat Sheet
 
 ![Reinforcement Learning Cheat Sheet](media/reinforcement_learning-overview.png "Reinforcement Learning Cheat Sheet")
