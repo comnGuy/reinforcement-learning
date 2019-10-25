@@ -11,7 +11,7 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 
    2.2 [Policy Iteration](#policy_iteration)
 
-3. References
+3. [References](#references)
 
 ## <a name="cheat_sheet"></a>Cheat Sheet
 
@@ -46,7 +46,7 @@ Value Iteration:
 
 **Algorithm**
 
-## References
+## <a name="references"></a>References
 
 - Kallenberg 2002
 - Movie 37
