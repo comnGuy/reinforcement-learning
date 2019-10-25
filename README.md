@@ -43,3 +43,8 @@ Value Iteration:
 **Formula**
 
 **Algorithm**
+
+## References
+
+- Kallenberg 2002
+- Movie 37
