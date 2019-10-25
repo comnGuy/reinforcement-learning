@@ -21,10 +21,6 @@ Note: This repository is still in progress to teach me Dynamic Programming and s
 
 ### <a name="value_iteration"></a>Value Iteration
 
-**Formula**
-
-<img src="https://latex.codecogs.com/gif.latex?V_{i&plus;1}(s)&space;:=&space;\max_a&space;\left\{&space;\sum\_{s'}&space;P_a(s,s')&space;\left(&space;R_a(s,s')&space;&plus;&space;\gamma&space;V_i(s')&space;\right)&space;\right\}" title="\Large x=V_{i+1}(s) := \max_a \left\{ \sum\_{s'} P_a(s,s') \left( R_a(s,s') + \gamma V_i(s') \right) \right\}" />
-
 **Algorithm**
 
 1. Init table V of value estimates with zero
